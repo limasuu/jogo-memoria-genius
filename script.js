@@ -53,3 +53,28 @@ let checkOrder= () => {
         nextLevel();
     }
 }
+
+//Funcao para o clique do usuario
+let click = (color) => {
+
+    clickedOrder[clickedOrder.length]= color;
+    createColorElement(color).classList.add('selected');
+
+    setTimeout( () => {
+        createColorElement(color).classList.remove('selected');
+        checkOrder();
+    }, 250);
+}
+
+//Funcao que retorna a cor
+let createColorElement= (color) => {
+    if(color == 0)
+        return green;
+    else if(color == 1)
+        return red;
+    else if(color == 2)
+        return yellow;
+    else if(color == 3)
+        return blue;
+}
+
