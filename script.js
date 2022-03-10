@@ -24,3 +24,32 @@ let shuffleOrder= () => {
         lightColor(elementColor, Number(i) + 1);
     }
 }
+
+//Acende a proxima cor
+let lightColor= (element, number) => {
+
+    number= number * 500;
+
+    setTimeout( () => {
+        element.classList.add('selected');
+    }, number - 250);
+
+    setTimeout(() => {
+        element.classList.remove('selected');
+    }, number);
+}
+
+//Checa se os botoes clicados sao os mesmos da ordem gerada no jogo
+let checkOrder= () => {
+
+    for(let i in clickedOrder){
+        if(clickedOrder[i] != order[i]){
+            gameOver();
+            break;
+        }
+    }
+    if(clickedOrder.length == order.length){
+        alert(`Pontuação: ${score}\nVocê acertou! Iniciando próximo nível!`);
+        nextLevel();
+    }
+}
