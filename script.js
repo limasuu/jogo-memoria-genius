@@ -94,3 +94,21 @@ let gameOver= () => {
 
     playGame();
 }
+
+//funcao de inicio do jogo
+let playGame= () => {
+
+    alert('Bem-vindo ao Gênesis! Iniciando novo jogo!');
+    score= 0;
+
+    nextLevel();
+}
+
+//Eventos de clique para as cores
+green.onclick= () => click(0);
+red.onclick= () => click(1);
+yellow.onclick= () => click(2);
+blue.onclick= () => click(3);
+
+//Inicio do jogo
+playGame();
