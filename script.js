@@ -78,3 +78,19 @@ let createColorElement= (color) => {
         return blue;
 }
 
+//Funcao para proximo nivel do jogo
+let nextLevel = () => {
+    score++;
+    shuffleOrder();
+}
+
+
+//Funcao para game over
+let gameOver= () => {
+    alert(`Pontuação: ${score}!\nVocê perdeu o jogo!\nClique em OK para iniciar um novo jogo`);
+
+    order= [];
+    clickedOrder= [];
+
+    playGame();
+}
