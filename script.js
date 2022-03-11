@@ -80,6 +80,7 @@ let createColorElement= (color) => {
 
 //Funcao para proximo nivel do jogo
 let nextLevel = () => {
+    document.querySelector('.score').innerHTML= score;
     score++;
     shuffleOrder();
 }

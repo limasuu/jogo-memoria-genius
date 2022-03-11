@@ -1,15 +1,41 @@
 body{
     margin: 0;
-    background-color: rgb(240, 229, 237);
+    background-color: darkgray;
+
+    display: grid;
+    grid-template-areas: 'game placar';
+    grid-template-columns: 70vw 30vw;
+    grid-template-rows: 100vh;    
 }
 
-.main-game{
-    height: 100vh;
-    width: 100vw;
-    
+.main-game, .placar, .info-placar{
     display: flex;
     justify-content: center;
+}
+
+.placar, .info-placar{
+    flex-direction: column;
+}
+
+.main-game, .info-placar{
     align-items: center;
+}
+
+.placar{   
+    grid-area: placar;    
+      
+    align-items: flex-start;
+}
+
+.info-placar{
+    border: 5px solid white;   
+    padding: 30px 50px; 
+    background-color: dimgray;
+    color: white;
+}
+
+.main-game{ 
+    grid-area: game;
 }
 
 .genius{
@@ -19,11 +45,15 @@ body{
     grid-gap: 10px;
 
     background-color: white;
-    border: 1px solid white;    
+    border: 10px solid white;    
     border-radius: 100%;
 
     width: 500px;
     height: 500px;
+}
+
+.cor:hover{
+    cursor: pointer;
 }
 
 .blue{
